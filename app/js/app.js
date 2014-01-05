@@ -1,8 +1,11 @@
 'use strict';
 
-
 // Declare app level module which depends on filters, and services
-angular.module('myApp', ['myApp.controllers', 'myApp.filters', 'myApp.services', 'myApp.directives']).
+angular.module('myApp', [
+    'myApp.controllers', 
+    'myApp.filters', 
+    'myApp.services', 
+    'myApp.directives']).
 
   config(['$routeProvider', function($routeProvider) {
 
@@ -21,10 +24,10 @@ angular.module('myApp', ['myApp.controllers', 'myApp.filters', 'myApp.services',
     $routeProvider.when('/login', 
     	{
     		templateUrl: 'partials/login.tpl.html', 
-    		controller: 'MyCtrl1'
+    		controller: 'LoginCtrl'
     	}
     );
 
-
     $routeProvider.otherwise({redirectTo: '/default'});
+
   }]);

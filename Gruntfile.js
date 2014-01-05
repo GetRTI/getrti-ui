@@ -1,5 +1,6 @@
 'use strict';
 
+var path = require('path');
 module.exports = function (grunt) {
 
   grunt.initConfig({
@@ -52,12 +53,27 @@ module.exports = function (grunt) {
       }
     },
 
+    express: {
+      api: {
+        options: {
+          port: 57301,
+          server: path.resolve('./demorestapi/server')
+        }
+      }
+    },    
+
     concurrent: {
       dev: {
         tasks: ['watch', 'watch-tests', 'web'],
         options: {
           logConcurrentOutput: true
         }
+      },
+      runuiandrest: {
+        tasks: ['runexpress', 'web'],
+        options: {
+          logConcurrentOutput: true
+        }        
       }
     }
   });
@@ -67,8 +83,12 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-express');
 
   grunt.registerTask('web', ['connect:web']);
   grunt.registerTask('watch-tests', ['karma:dev']);
   grunt.registerTask('default', ['concurrent:dev']);
+  grunt.registerTask('runexpress', ['express:api', 'express-keepalive']);
+
+  grunt.registerTask('run', ['concurrent:runuiandrest']);
 };
