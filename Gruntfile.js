@@ -87,8 +87,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('web', ['connect:web']);
   grunt.registerTask('watch-tests', ['karma:dev']);
-  grunt.registerTask('default', ['concurrent:dev']);
+  //grunt.registerTask('default', ['concurrent:dev']);
   grunt.registerTask('runexpress', ['express:api', 'express-keepalive']);
 
-  grunt.registerTask('run', ['concurrent:runuiandrest']);
+  grunt.registerTask('default', ['concurrent:runuiandrest']);
 };
