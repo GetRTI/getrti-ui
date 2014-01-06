@@ -1,5 +1,9 @@
 /* app css stylesheet */
 
+html, body {
+  height: 100%;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -130,4 +134,7 @@ body {
 .form-signin .checkbox {
   font-weight: normal;
   margin-bottom: 10px;
+}
+.form-signin, .form-search {
+  margin-top: 200px;
 }

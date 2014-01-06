@@ -5,20 +5,31 @@ angular.module('myApp', [
     'myApp.controllers', 
     'myApp.filters', 
     'myApp.services', 
-    'myApp.directives']).
+    'myApp.directives', 'ngTable']).
 
   config(['$routeProvider', function($routeProvider) {
 
-    $routeProvider.when('/default', 
+    $routeProvider.when('/', 
     	{
-    		templateUrl: 'partials/default.tpl.html', 
-    		controller: 'MyCtrl1'
+    		templateUrl: 'partials/main.tpl.html', 
+    		controller: 'MainCtrl'
     	}
+    );
+    $routeProvider.when('/about', 
+        {
+            templateUrl: 'partials/about.tpl.html'
+        }
+    );
+    $routeProvider.when('/files', 
+        {
+            templateUrl: 'partials/files.tpl.html',
+            controller: 'FileCtrl'
+        }
     );
     $routeProvider.when('/signup', 
     	{
     		templateUrl: 'partials/register.tpl.html', 
-    		controller: 'MyCtrl1'
+    		controller: 'SignupCtrl'
     	}
     );
     $routeProvider.when('/login', 

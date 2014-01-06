@@ -56,7 +56,7 @@ module.exports = function (grunt) {
     express: {
       api: {
         options: {
-          port: 57301,
+          port: 3000,
           server: path.resolve('./demorestapi/server')
         }
       }
@@ -89,6 +89,7 @@ module.exports = function (grunt) {
   grunt.registerTask('watch-tests', ['karma:dev']);
   //grunt.registerTask('default', ['concurrent:dev']);
   grunt.registerTask('runexpress', ['express:api', 'express-keepalive']);
+  grunt.registerTask('server', ['express:api', 'express-keepalive']);
 
   grunt.registerTask('default', ['concurrent:runuiandrest']);
 };
