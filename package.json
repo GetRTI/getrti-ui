@@ -10,5 +10,8 @@
     "grunt-concurrent": "~0.2.0",
     "express": "3.x",
     "grunt-express": "~0.3.0"
+  },
+  "dependencies": {
+    "grunt-express": "~1.2.1"
   }
 }
