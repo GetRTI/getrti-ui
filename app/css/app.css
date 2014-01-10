@@ -1,140 +1,223 @@
-/* app css stylesheet */
-
-html, body {
-  height: 100%;
+/*app css stylesheet*/
+HTML, BODY
+{
+	height: 100%;
+	font-family: avenir, cabin, helvetica, arial;
+	color: #333;
 }
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+H1
+{
+	font-weight: normal;
+	text-shadow: none;
+	color: #2F8EAE;
+	font-family: Oswald;
+	font-size: 32px;
 }
-
-.menu:before {
-  content: "[";
+.menu
+{
+	list-style: none;
+	border-bottom: 0.1em solid #000000;
+	margin-bottom: 2em;
+	padding: 0 0 0.5em;
 }
-
-.menu:after {
-  content: "]";
+.menu:before
+{
+	content: "[";
 }
-
-.menu > li {
-  display: inline;
+.menu:after
+{
+	content: "]";
 }
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+.menu > LI
+{
+	display: inline;
 }
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+.menu > LI:before
+{
+	content: "|";
+	padding-right: 0.3em;
 }
-
-/*   -------------------------------   */
-body {
-  padding-top: 50px;
+.menu > LI:nth-child(1):before
+{
+	content: "";
+	padding: 0;
 }
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
+/*-------------------------------*/
+BODY
+{
+	padding-top: 50px;
+	background-color: #F7F4EA;
 }
-#footer {
-  height: 60px;
-  background-color: #f5f5f5;
+.starter-template
+{
+	padding: 40px 15px;
+	text-align: center;
 }
-
-/* Signup */
-.form-signin {
-  max-width: 400px;
-  padding: 15px;
-  margin: 0 auto;
-  background-color: #3e444c;
-  box-shadow: 1px 1px 2px 2px #555d68;
-  border-radius: 5px;
+#footer
+{
+	height: 60px;
+	background-color: #F5F5F5;
 }
-.form-signin .form-control:focus {
-  z-index: 2;
+/*Signup/Sign in*/
+.form-signin
+{
+	max-width: 400px;
+	padding: 0px 30px 20px;
+	margin: 0 auto;
+	overflow: auto;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-box-shadow: 0 1px 2px #ccc;
+	box-shadow: 0 1px 2px #CCC;
+	background-color: #FFF;
 }
-.form-signin .form-control {
-  position: relative;
-  font-size: 16px;
-  height: auto;
-  padding: 10px;
+.form-signin .form-control:focus
+{
+	z-index: 2;
+	border: 2px solid #CAB97B;
 }
-.form-signin input.password {
-  margin-bottom: -1px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+.form-signin .form-control
+{
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+	color: #666;
+	border: 2px solid #E0D6B2;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 0px rgba(0, 0, 0, 0.075);
 }
-.form-signin input.password2 {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+.form-signin .form-input
+{
+	margin-bottom: 10px;
 }
-.form-signin .form-input {
-  margin-bottom: 10px;
+.form-signin BUTTON
+{
+	float: right;
+	margin: 0px;
+	background: #CC6644;
+	text-shadow: none;
+	font-size: 20px;
+	border: 0px;
+	padding: 8px 30px;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
 }
-.form-signin .form-input .errors {
-  background-color: #484f57;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  transition: border-color 1s;
+.form-signin INPUT[type=text], .form-signin INPUT[type=email], .form-signin INPUT[type=password]
+{
+	padding-left: 46px;
+	height: 40px;
 }
-.form-signin .form-input .errors.active {
-  border-color: #666666;
+.form-signin BUTTON:hover
+{
+	background: #699A00;
+	text-shadow: none;
 }
-.form-signin .form-input .errors .error {
-  margin: 3px 5px;
-  white-space: nowrap;
-  overflow: hidden;
+.form-signin .form-input .errors
+{
+	background-color: #484F57;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	transition: border-color 1s;
 }
-.form-signin .form-input .errors .error.ng-hide-add {
-  transition: max-height 0.5s;
-  max-height: 60px;
-  display: block!important;
+.form-signin .form-input .errors.active
+{
+	border-color: #666666;
 }
-.form-signin .form-input .errors .error.ng-hide-add.ng-hide-add-active {
-  max-height: 0px;
+.form-signin .form-input .errors .error
+{
+	margin: 3px 5px;
+	white-space: nowrap;
+	overflow: hidden;
 }
-.form-signin .form-input .errors .error.ng-hide-remove {
-  transition: max-height 0.5s;
-  max-height: 0px;
-  display: block!important;
+.form-signin .form-input .errors .error.ng-hide-add
+{
+	transition: max-height 0.5s;
+	max-height: 60px;
+	display: block !important;
 }
-.form-signin .form-input .errors .error.ng-hide-remove.ng-hide-remove-active {
-  max-height: 60px;
+.form-signin .form-input .errors .error.ng-hide-add.ng-hide-add-active
+{
+	max-height: 0px;
 }
-.form-signin .form-input .errors .error:before {
-  content: 'Error:';
-  display: inline-block;
-  color: #FA3F3C;
-  font-weight: 800;
-  width: 40px;
-  vertical-align: top;
+.form-signin .form-input .errors .error.ng-hide-remove
+{
+	transition: max-height 0.5s;
+	max-height: 0px;
+	display: block !important;
 }
-.form-signin .form-input .errors .error p {
-  display: inline-block;
-  white-space: normal;
-  margin: 0;
+.form-signin .form-input .errors .error.ng-hide-remove.ng-hide-remove-active
+{
+	max-height: 60px;
 }
-.form-signin .form-input .errors .error p:first-child {
-  width: 40px;
-  vertical-align: top;
+.form-signin .form-input .errors .error:before
+{
+	content: 'Error:';
+	display: inline-block;
+	color: #FA3F3C;
+	font-weight: 800;
+	width: 40px;
+	vertical-align: top;
 }
-.form-signin .form-input .errors .error p:last-child {
-  width: 316px;
+.form-signin .form-input .errors .error P
+{
+	display: inline-block;
+	white-space: normal;
+	margin: 0;
 }
-.form-signin .form-signin-heading {
-  font-weight: 800;
-  text-shadow: 2px 2px 4px black;
-  margin-bottom: 10px;
+.form-signin .form-input .errors .error P:first-child
+{
+	width: 40px;
+	vertical-align: top;
 }
-.form-signin .checkbox {
-  font-weight: normal;
-  margin-bottom: 10px;
+.form-signin .form-input .errors .error P:last-child
+{
+	width: 316px;
 }
-.form-signin, .form-search {
-  margin-top: 200px;
+.form-signin .form-signin-heading
+{
+	margin-bottom: 10px;
+	font-weight: normal;
+	text-shadow: none;
+	color: #2F8EAE;
+	font-family: Oswald;
+	font-size: 32px;
+}
+.form-signin .checkbox
+{
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+.form-signin, .form-search
+{
+	margin-top: 8%;
+}
+.form-signin #password2
+{
+	margin-top: -1px;
+	border-top: 0px;
+}
+.form-signin #passwordTall
+{
+	height: 76px;
+}
+.fa-fw
+{
+	color: #FFF;
+	position: absolute;
+	font-size: 18px;
+	background-color: #E0D6B2;
+	height: 36px;
+	line-height: 40px;
+	width: 36px;
+	margin: 2px;
+}
+/*ABOUT*/
+.about
+{
+	margin: 0px 20px;
 }

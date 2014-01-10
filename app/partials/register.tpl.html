@@ -1,34 +1,29 @@
-<form class="form-signin" name="registerForm" role="registration" ng-submit="submit(registerForm)">
-  <div class="alert alert-warning">
-    <p class="text-center"><strong>New Registration</strong></p>
-    <p class="text-center">Please register to upload any RTI related documents</p>
-  </div>
-  <h2 class="form-signin-heading"><i class="fa fa-user"></i> New User</h2>
-  <!--div class="form-group">
-    <label for="username" class="col-lg-2 control-label">Email</label>
-    <div class="col-lg-10">
-      <input type="text" class="form-control" id="username" placeholder="Username">
-    </div>
-  </div-->
-  <div class="form-input name">
-    <input type="text" class="form-control" placeholder="Full Name" name="fullname" ng-model="registerObj.name" ng-minlength="4" ng-maxlength="32" ng-required="true">
-  </div>
-  <div class="form-input email">
-    <input type="email" class="form-control email" placeholder="E-Mail" name="email" ng-model="registerObj.email" ng-required="true" remote-validated="used">
-  </div>  
-  <div class="form-input username">
-    <input type="text" class="form-control" placeholder="Username" name="username" ng-model="registerObj.username" autofocus="true"
-      ng-minlength="4" ng-maxlength="16" ng-required="true" remote-validated="used">
-  </div>
-  <div class="form-input password">
-    <input type="password" class="form-control password" placeholder="Password" name="password" ng-model="registerObj.password" ng-minlength="4" ng-maxlength="16" ng-required="true" password-match="registerObj.password2">
-    <input type="password" class="form-control password2" placeholder="Repeat Password" name="password2" ng-model="registerObj.password2">
-  </div>
+    <form class="form-signin" id="registerForm" name="registerForm">
+        <h2 class="form-signin-heading">New User</h2>
+        <div class = "form-signin-subheading">
+			Register to add new documents related to RTI
+        </div>
 
-  <button class="btn btn-lg btn-block" type="submit"
-    ng-class="{ 'btn-primary': registerForm.$valid && registerForm.$dirty, 'btn-success': redirect }"
-    ng-disabled="registerForm.$invalid || registerForm.$pristine || xhr || redirect">
-    <span ng-hide="redirect">Register <i class="fa fa-repeat fa-spin" ng-show="xhr"></i></span>
-    <span ng-show="redirect">Redirecting... <i class="fa fa-repeat fa-spin"></i></span>
-  </button>
-</form>
+
+        <div class="form-input name">
+        	<i class="fa fa-arrow-right fa-fw"></i>
+            <input class="form-control" name="fullname" placeholder="Full Name"  type="text">
+        </div>
+
+        <div class="form-input email">
+        	<i class="fa fa-envelope fa-fw"></i>
+            <input class="form-control email" name="email" placeholder="E-Mail" type="email">
+        </div>
+
+        <div class="form-input username">
+        	<i class="fa fa-user fa-fw"></i>
+            <input autofocus="true" class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+
+        <div class="form-input password">
+        	<i class="fa fa-lock fa-fw" id = "passwordTall"></i>
+            <input class="form-control password" name="password" placeholder= "Password" type="password"> 
+            <input class="form-control password2" id="password2" name="password2" placeholder="Repeat Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit"><span>Register</span></button>
+    </form>
