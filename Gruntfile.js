@@ -91,5 +91,9 @@ module.exports = function (grunt) {
   grunt.registerTask('runexpress', ['express:api', 'express-keepalive']);
   grunt.registerTask('server', ['express:api', 'express-keepalive']);
 
+  /** This will do the following:
+      Start Web\UI server on port:  9000
+      Start REST service on port:  3000   (This will be replaced with PHP backend)
+  **/
   grunt.registerTask('default', ['concurrent:runuiandrest']);
 };

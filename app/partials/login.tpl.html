@@ -1,29 +1,17 @@
-    <form class="form-signin">
-        <h2 class="form-signin-heading">Sign In</h2><!--div class="form-group">
-    <label for="username" class="col-lg-2 control-label">Email</label>
-    <div class="col-lg-10">
-      <input type="text" class="form-control" id="username" placeholder="Username">
-    </div>
-  </div-->
+<form class="form-signin" ng-submit="login()">
+    <h2 class="form-signin-heading">Sign In</h2>
 
-        <div class="form-input name">
-            <div class="form-input username">
-            	<i class="fa fa-user fa-fw"></i>
-                <!--input type="text" class="form-control" placeholder="Username" name="username" ng-model="registerObj.username" autofocus="true"
-      ng-minlength="4" ng-maxlength="16" ng-required="true" remote-validated="used"-->
-                <input class="form-control" placeholder="Username" type="text">
-            </div>
-
-            <div class="form-input password">
-            	<i class="fa fa-lock fa-fw"></i>
-                <!--input type="password" class="form-control password" placeholder="Password" name="password" ng-model="registerObj.password" ng-minlength="4" ng-maxlength="16" ng-required="true" password-match="registerObj.password2"-->
-                <input class="form-control" placeholder="Password" type="password">
-            </div>
-            <button class="btn btn-primary" type="submit">Sign In</button> <!--button class="btn btn-lg btn-block" type="submit"
-    ng-class="{ 'btn-primary': registerForm.$valid && registerForm.$dirty, 'btn-success': redirect }"
-    ng-disabled="registerForm.$invalid || registerForm.$pristine || xhr || redirect">
-    <span ng-hide="redirect">Login <i class="fa fa-repeat fa-spin" ng-show="xhr"></i></span>
-    <span ng-show="redirect">Redirecting... <i class="fa fa-repeat fa-spin"></i></span>
-  </button-->
+    <div class="form-input name">
+        <div class="form-input username">
+        	<i class="fa fa-user fa-fw"></i>
+            <input ng-model="user.username" class="form-control" placeholder="Username" type="text">
         </div>
-    </form>
+
+        <div class="form-input password">
+        	<i class="fa fa-lock fa-fw"></i>
+            <input ng-model="user.password" class="form-control" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Sign In</button>
+    </div>
+
+</form>

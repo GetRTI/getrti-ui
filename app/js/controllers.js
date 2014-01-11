@@ -3,43 +3,54 @@
 /* Controllers */
 
 angular.module('myApp.controllers', []).
+	
+	/**********************************************************************
+	 * Main Controller  --- Do we really need this???
+	 **********************************************************************/
+	controller('MainCtrl', function($scope) {
 
-/**********************************************************************
- * Login controller
- **********************************************************************/
+	}).
+
+	/**********************************************************************
+	 * Login controller
+	 **********************************************************************/
 	controller('LoginCtrl', function($scope, $rootScope, $location, AuthService) {
 	  // This object will be filled by the form
 	  $scope.user = {};
 
 	  // Register the login() function
 	  $scope.login = function(){
-		AuthService.login($scope.user.username, $scope.user.password)
+	  	console.log('username = ' + $scope.user.username + '  password = ' + $scope.user.password );
+
+		AuthService.login($scope.user)
 		.success(function(user){
 		  // No error: authentication OK
+		  console.log("successful !!!!!!");
 		  $rootScope.message = 'Authentication successful!';
-		  $location.url('/dashboard');
+		  $location.url('/files');
 		})
 		.error(function(){
 		  // Error: authentication failed
+		  console.log("Error !!!!!!");
 		  $rootScope.message = 'Authentication failed.';
 		  $location.url('/login');
 		});
 	  };
 	}).
 
-	/*
+	/**********************************************************************
 	 * Controller for the register/signup form
-	 */
+	 **********************************************************************/
 	controller('SignupCtrl', function($scope, $rootScope, $location, AuthService) {
 		//Signup form object
 		$scope.registerObj = {};
 
 		//Signup handler
-		$scope.submit = function(){
-			AuthService.signup($scope.registerObj.name, $scope.registerObj.email, $scope.registerObj.username)
+		$scope.register = function(){
+			AuthService.signup($scope.registerObj)
 			.success(function(user){
 				//Redirect to login page after registration is succesful
-				$rootScope.message = 'Signup successful, Please check you email';
+				$rootScope.message = 'Signup successful, Please check your email';
 				$location.url('/login');
 			})
 			.error(function(error){
@@ -50,7 +61,10 @@ angular.module('myApp.controllers', []).
 			})
 		};
 	}).
-	
+
+	/**********************************************************************
+	 * Controller for the File list
+	 **********************************************************************/	
 	controller('FileCtrl', function($scope, FileService, ngTableParams) {
 		FileService.get().then(function(data){
 			$scope.files = data.data;
