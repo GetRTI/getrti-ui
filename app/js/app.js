@@ -6,14 +6,13 @@ angular.module('myApp', [
     'myApp.controllers', 
     'myApp.filters', 
     'myApp.services', 
-    'myApp.directives', 'ngTable']).
+    'myApp.directives', 'ngTable', 'angularFileUpload', 'ui.bootstrap', 'ngCookies']).
 
   config(['$routeProvider', function($routeProvider) {
 
     $routeProvider.when('/', 
     	{
     		templateUrl: 'partials/main.tpl.html', 
-    		controller: 'MainCtrl'
     	}
     );
     $routeProvider.when('/about', 
@@ -25,6 +24,17 @@ angular.module('myApp', [
         {
             templateUrl: 'partials/files.tpl.html',
             controller: 'FileCtrl'
+        }
+    );
+    $routeProvider.when('/file/:fileId', 
+        {
+            templateUrl: 'partials/file_details.tpl.html',
+            controller: 'FileDetailsCtrl',
+            resolve: {
+                selectedFile: function(FileLoader){
+                    return FileLoader();
+                }
+            }
         }
     );
     $routeProvider.when('/signup', 
@@ -42,4 +52,20 @@ angular.module('myApp', [
 
     $routeProvider.otherwise({redirectTo: '/default'});
 
-  }]);
+  }]).
+
+run(function($rootScope, $location, AuthService){
+    var authRoutes = ['/files', '/reports'];
+    $rootScope.$on('$routeChangeStart', function(event, current, prev){
+        var location = $location.path();
+        if (authRoutes.indexOf(location) !== -1 && !AuthService.isLoggedIn()){
+            $rootScope.flash = 'Login is required to acess this page';
+            $location.path('/login');
+        }
+        else if(authRoutes.indexOf(location) !== -1 || location !== '/login'){
+            $rootScope.flash = '';
+        }
+    });
+})
+
+.constant('USER_COOKIE_NAME', 'GETRTI_UER');
