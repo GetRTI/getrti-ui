@@ -1,11 +1,13 @@
 {
   "name": "angular-login-example",
   "dependencies": {
-    "bootstrap-ui": "~0.6.0",
-    "angular": "~1.2",
-    "angular-mocks": "~1.2",
-    "angular-animate": "~1.2",
-    "angular-ui-router": "~0.2.0",
-    "bootstrap": "~3.0.2"
+ 	"jquery": "~1.10.2",
+ 	"underscore": "~1.5.2",
+ 	"bootstrap":"~3.0.3",
+ 	"angular": "~1.2.7",
+ 	"angular-router": "~1.2.7",
+ 	"angular-cookies": "~1.2.7",
+ 	"angular-file-upload": "~1.2.3",
+ 	"ng-table": "~0.3.0"
   }
 }

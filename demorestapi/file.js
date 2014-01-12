@@ -50,10 +50,10 @@ module.exports = function(app){
 
         var file = {"id": "1129323", "name":"File 4","date":"10/04/2013","status":"Pending","tags":["agriculture","field"],"department":"agri"};
         file['content'] = [ 
-            {'image': 'images/image1.jpg', 'text': 'Contents of first image1'}, 
-            {'image': 'images/image2.jpg', 'text': 'Contents of second image2'}, 
-            {'image': 'images/image3.jpg', 'text': 'Contents of thid image3'}, 
-            {'image': 'images/image4.jpg', 'text': 'Contents of fourth image4'}
+            {'image': 'assets/images/image1.jpg', 'text': 'Contents of first image1'}, 
+            {'image': 'assets/images/image2.jpg', 'text': 'Contents of second image2'}, 
+            {'image': 'assets/images/image3.jpg', 'text': 'Contents of thid image3'}, 
+            {'image': 'assets/images/image4.jpg', 'text': 'Contents of fourth image4'}
         ];
         res.json(file);
     });
