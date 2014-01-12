@@ -161,7 +161,7 @@ angular.module('myApp.controllers', []).
 
         // Uploads the file when selected
         $scope.onFileSelect = function($files) {
-            FileService.uploadFiles($files).then(function(){
+            FileService.upload($files).then(function(){
               console.log('Uploaded all the files');
             });
         };
