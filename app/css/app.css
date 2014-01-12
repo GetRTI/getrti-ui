@@ -13,6 +13,10 @@ H1
 	font-family: Oswald;
 	font-size: 32px;
 }
+#main
+{
+	min-height: 500px;
+}
 .menu
 {
 	list-style: none;
@@ -42,6 +46,57 @@ H1
 	content: "";
 	padding: 0;
 }
+.navbar-inverse
+{
+	background-repeat: no-repeat;
+	background: #FFF;
+	border: 0px;
+	padding: 0px 20px;
+	background-color: #FFF;
+	border-bottom: 1px solid #D0D0D0;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2F8EAE',endColorstr='#ff2F8EAE',GradientType=0);
+	box-shadow: 1px 5px 2px -5px #9C9C9C;
+	-moz-box-shadow: 1px 5px 2px -5px rgb(156, 156, 156);
+	-ms-box-shadow: 1px 5px 2px -5px rgb(156, 156, 156);
+}
+.navbar
+{
+	text-shadow: 0px 0px;
+}
+.navbar-inverse .navbar-nav > LI > A
+{
+	color: #AE4F2F;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: helvetica, arial;
+}
+.navbar-nav > LI > A
+{
+	border: 0px;
+}
+.navbar-inverse .navbar-nav > LI > A:hover, .navbar-inverse .navbar-nav > LI > A:focus
+{
+	background-color: #AE4F2F;
+}
+.navbar-inverse .navbar-brand
+{
+	color: #333;
+}
+.navbar-inverse .navbar-brand:hover
+{
+	color: #FFF;
+	background-color: #2F8EAE;
+}
+.navbar-inverse .navbar-toggle
+{
+	background-color: #AE4F2F;
+	border: 0px solid #000;
+}
+.navbar-inverse .navbar-toggle:hover
+{
+	background-color: #2F8EAE;
+}
 /*-------------------------------*/
 BODY
 {
@@ -55,8 +110,13 @@ BODY
 }
 #footer
 {
-	height: 60px;
-	background-color: #F5F5F5;
+	line-height: 40px;
+	background-color: transparent;
+	border-top: 1px solid #E0D6B2;
+}
+#footer A
+{
+	color: #333;
 }
 /*Signup/Sign in*/
 .form-signin
@@ -216,8 +276,98 @@ BODY
 	width: 36px;
 	margin: 2px;
 }
+/*FILE UPLOAD*/
+.fileupload {
+  position: relative;
+  overflow: hidden;
+}
+.fileupload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
 /*ABOUT*/
 .about
 {
 	margin: 0px 20px;
 }
+.form-signin .checkbox {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.form-signin, .form-search {
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.container[role="main"] {
+    min-height: 100%;
+    margin-bottom: -60px;
+    height: auto !important;
+}
+/*SEARCH*/
+.input-block-level.form-control.txtSearch
+{
+	width: 90%;
+	float: left;
+}
+.btn-search
+{
+	background: transparent;
+	border: 0px solid #000;
+	float: left;
+	margin-left: -8px;
+	margin-top: -2px;
+	width: 10%;
+}
+.btn-search .fa-fs
+{
+	background-color: #4E933B;
+	display: block;
+	color: #FFF;
+	height: 38px;
+	line-height: 36px;
+	width: 40px;
+	font-size: 18px;
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+.btn-browse
+{
+	background-color: #2F8EAE;
+	border: 0px solid #000;
+	height: 40px;
+	width: 100%;
+	color: #FFF;
+	font-weight: normal;
+	text-transform: uppercase;
+	line-height: 40px;
+	font-size: 16px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.btn-browse:hover, .btn-search .fa-fs:hover
+{
+	background-color: #AE4F2F;
+}
+.txtOr
+{
+	font-family: Courgette, cursive;
+	font-size: 32px;
+	line-height: 32px;
+	color: #888;
+	display: block;
+	text-align: center;
+}
+

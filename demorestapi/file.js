@@ -72,6 +72,9 @@ module.exports = function(app){
     // 
     app.put('/file', function(req, res){
 
+        if (req.files){
+            console.log(req.files);
+        }
         // Will have all the values except tags and departments
         var files = [
          {"id": "123445", "name": "file 4", "date": new Date(), "status": "pending", "tags": [], "department": ""},
