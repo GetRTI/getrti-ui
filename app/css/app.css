@@ -75,9 +75,17 @@ H1
 {
 	border: 0px;
 }
-.navbar-inverse .navbar-nav > LI > A:hover, .navbar-inverse .navbar-nav > LI > A:focus
+
+.navbar-inverse .navbar-nav > LI > A:hover, 
+.navbar-inverse .navbar-nav > LI > A:focus
 {
 	background-color: #AE4F2F;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #AE4F2F;
 }
 .navbar-inverse .navbar-brand
 {
@@ -297,7 +305,7 @@ BODY
 {
 	margin: 0px 20px;
 }
-<<<<<<< HEAD
+
 .form-signin .checkbox {
   font-weight: normal;
   margin-bottom: 10px;
@@ -372,15 +380,6 @@ BODY
 	text-align: center;
 }
 
-=======
-.form-signin .checkbox {
-  font-weight: normal;
-  margin-bottom: 10px;
-}
-.form-signin, .form-search {
-  margin-top: 150px;
-  margin-bottom: 50px;
-}
 .fileupload {
   position: relative;
   overflow: hidden;
@@ -396,9 +395,33 @@ BODY
   opacity: 0;
   filter: alpha(opacity=0);
 }
-.container[role="main"] {
-    min-height: 100%;
-    margin-bottom: -60px;
-    height: auto !important;
+.carousel-indicators {
+    display: none;
 }
->>>>>>> f6aa7adb712558307149007755ea844f943e63fb
+.carousel-control {
+    position: relative;
+    background: #red;
+}
+.carousel-control.left {
+    padding: 0 10px;
+    margin-right: 5px;
+    left: 50%;
+}
+.carousel-control.right {
+    padding: 0 10px;
+    margin: 5px;
+    left: 50%;
+}
+.carosel-container {
+    margin-bottom: 60px;
+}
+.carousel-image img {
+    width: 500px;
+    height: 500px;
+}
+.carousel-text {
+    border: 3px solid #E7B7B7;
+    min-height: 450px;
+    padding: 5px;
+}
+

@@ -49,9 +49,12 @@ module.exports = function(app){
     app.get('/file/:fileId', function(req, res){
 
         var file = {"id": "1129323", "name":"File 4","date":"10/04/2013","status":"Pending","tags":["agriculture","field"],"department":"agri"};
-        file['images'] = ['image1.png', 'image2.png', 'image3.png', 'image4.png', 'image5.png'];
-        file['content'] = ['This is page 1', 'This is page 2', 'This is page 3', 'This is page 4', 'This is page 5' ];
-
+        file['content'] = [ 
+            {'image': 'images/image1.jpg', 'text': 'Contents of first image1'}, 
+            {'image': 'images/image2.jpg', 'text': 'Contents of second image2'}, 
+            {'image': 'images/image3.jpg', 'text': 'Contents of thid image3'}, 
+            {'image': 'images/image4.jpg', 'text': 'Contents of fourth image4'}
+        ];
         res.json(file);
     });
 

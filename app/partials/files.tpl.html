@@ -4,7 +4,7 @@
 
 <div class="container files-list-section col-lg-9">
 	<table ng-table="tableParams" class="table table-striped">
-	    <tr ng-repeat="file in files">
+	    <tr ng-repeat="file in files| filter:query">
 	    	<td header="'ng-table/headers/checkbox.html'">
 	    		<input type="checkbox" ng-model="allfiles.selected[file.id]">
 	    	</td>
@@ -17,7 +17,7 @@
 		     		data-toggle="dropdown">Select <span class="caret"></span>
 		     		</button>
 		     		<ul class="dropdown-menu" role="menu">
-						<li><a ng-click="edit()">Edit</a></li>
+						<li><a ng-click="edit()" href="">Edit</a></li>
 						<li><a href="#">Classify</a></li>
 						<li><a href="#">Delete</a></li>
 		     		</ul>
@@ -36,7 +36,7 @@
 
 	<!-- File actions -->
 	<button class="btn btn-default btn-lg fileupload btn-block">Upload files
-		<input type="file" ng-file-select="onFileSelect($files)" class="upload" />
+		<input type="file" multiple ng-file-select="onFileSelect($files)" class="upload" />
 	</button>
 	<button class="btn btn-default btn-lg btn-block" ng-disabled="showLink()">Link files</button>
 	<button class="btn btn-default btn-lg btn-block" ng-disabled="showDelete()">Delete files</button>
