@@ -45,7 +45,7 @@ factory('AuthService', function($http, $q, $timeout, SessionService, USER_COOKIE
 }).
 
 //Gets the details about the files
-factory('FileService', function($http, $upload){
+factory('FileService', function($http, $upload, $q){
 	//Hook up with the server api here
 	return {
 		//Returns all the files available 
@@ -58,14 +58,17 @@ factory('FileService', function($http, $upload){
 			var filePromises = [];
 
 			 //$files: an array of files selected, each file has name, size, and type.
-            for (var i = 0; i < $files.length; i++) {
-              var file = $files[i];          
+            for (var i = 0; i < files.length; i++) {
+              var file = files[i];          
               var promise = $upload.upload({
                 url: '/file', //upload.php script, node.js route, or servlet url
                 method: 'PUT',
                 // headers: {'headerKey': 'headerValue'}, withCredential: true,
                 file: file,
-                name: file.name,
+                data : {
+                	name: file.name
+                },
+                fileFormDataName: 'file'
                 // file: $files, //upload multiple files, this feature only works in HTML5 FromData browsers
                 /* set file formData name for 'Content-Desposition' header. Default: 'file' */
                 //fileFormDataName: myFile,
