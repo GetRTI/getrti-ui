@@ -45,7 +45,7 @@ factory('AuthService', function($http, $q, $timeout, SessionService, USER_COOKIE
 }).
 
 //Gets the details about the files
-factory('FileService', function($http){
+factory('FileService', function($http, $upload){
 	//Hook up with the server api here
 	return {
 		//Returns all the files available 
@@ -53,12 +53,42 @@ factory('FileService', function($http){
 			return $http.get('http://localhost:3000/files');
 		},
 		// Uploads the new files through form data
-		upload: function(content){
-			return $http.put('http://localhost:3000/file');
+		upload: function(files){
+			var defer = $q.defer();
+			var filePromises = [];
+
+			 //$files: an array of files selected, each file has name, size, and type.
+            for (var i = 0; i < $files.length; i++) {
+              var file = $files[i];          
+              var promise = $upload.upload({
+                url: '/file', //upload.php script, node.js route, or servlet url
+                method: 'PUT',
+                // headers: {'headerKey': 'headerValue'}, withCredential: true,
+                file: file,
+                name: file.name,
+                // file: $files, //upload multiple files, this feature only works in HTML5 FromData browsers
+                /* set file formData name for 'Content-Desposition' header. Default: 'file' */
+                //fileFormDataName: myFile,
+                /* customize how data is added to formData. See #40#issuecomment-28612000 for example */
+                //formDataAppender: function(formData, key, val){} 
+              }).progress(function(evt) {
+                console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
+              });
+              filePromises.push(promise);
+          }
+          
+          //Wait for all files to get uploaded, once done resolve the my promise
+          $q.all(filePromises).then(function(data){
+          	 return defer.resolve(data);
+          }, function(){
+          	 return defer.reject();
+          });
+
+          return defer.promise;
 		},
 		// Updates the existing data for the file
-		update: function(fileId, tags, department, pages){
-			return $http.post('http://localhost:3000/file/' + fileId);
+		update: function(file){
+			return $http.post('http://localhost:3000/file/' + file.id, file);
 		},
 		//Gets the detailed information about the file
 		get_details: function(fileId){

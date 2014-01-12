@@ -92,7 +92,7 @@ angular.module('myApp.controllers', []).
         };
     }).
     
-    controller('FileCtrl', function($scope, $upload, $modal, FileService, ngTableParams) {
+    controller('FileCtrl', function($scope, $modal, FileService, ngTableParams) {
         FileService.get().then(function(data){
             $scope.files = data.data;
             $scope.tableParams = new ngTableParams({
@@ -137,39 +137,37 @@ angular.module('myApp.controllers', []).
             return true;
         };
         
+        // Enable the delete button in the sidebar only when atleast one file
+        // gets selected
         $scope.showDelete = function(){
             return ! _.some($scope.allfiles, function(value){
               return value;
             });
         };
 
+        //Deletes the multiple files
+        $scope.delete = function(){
+          var filesToDelete = Object.keys($scope.allfiles.selected);
+          FileService.delete(filesToDelete).then(function(){
+            //After the files are deleted, remove them from the $scope.files to
+            //update the view
+            angular.each($scope.files, function(file){
+                if (_.contains(filesToDelete, file.id)){
+                  $scope.files = _.without($scope.files, _.findWhere($scope.files, {id: file.id}));
+                }
+            });
+          });
+        };
+
+        // Uploads the file when selected
         $scope.onFileSelect = function($files) {
-            //$files: an array of files selected, each file has name, size, and type.
-            for (var i = 0; i < $files.length; i++) {
-              var file = $files[i];
-              $scope.upload = $upload.upload({
-                url: '/file', //upload.php script, node.js route, or servlet url
-                method: 'PUT',
-                // headers: {'headerKey': 'headerValue'}, withCredential: true,
-                file: file,
-                // file: $files, //upload multiple files, this feature only works in HTML5 FromData browsers
-                /* set file formData name for 'Content-Desposition' header. Default: 'file' */
-                //fileFormDataName: myFile,
-                /* customize how data is added to formData. See #40#issuecomment-28612000 for example */
-                //formDataAppender: function(formData, key, val){} 
-              }).progress(function(evt) {
-                console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
-              }).success(function(data, status, headers, config) {
-                // file is uploaded successfully
-                console.log(data);
-              });
-              //.error(...)
-              //.then(success, error, progress); 
-            }
+            FileService.uploadFiles($files).then(function(){
+              console.log('Uploaded all the files');
+            });
         };
     }).
 
-    controller('FileDetailsCtrl', function($scope, $rootScope, $location, AuthService, selectedFile) {
+    controller('FileDetailsCtrl', function($scope, $rootScope, $location, AuthService, FileService, selectedFile) {
         $scope.selectedFile = {};
 
         if (selectedFile){
@@ -177,4 +175,10 @@ angular.module('myApp.controllers', []).
         } else{
             $scope.selectedFile = {};
         }
+
+        // Save any changes made to this file
+        $scope.publish = function(){
+            var file = $scope.selectedFile;
+            FileService.update(file);
+        };
     });
