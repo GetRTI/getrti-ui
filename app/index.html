@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>getrti.org</title>
+    <title>get R.T.I</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -32,30 +32,28 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav" nav-tabs>
-            <li class="active"><a href="#">Home</a></li>
             <li><a href="#/search">Search</a></li>
             <li><a href="#/browse">Browse</a></li>
-            <li><a href="#/visualization">Visualization</a></li>
+            <!--<li><a href="#/visualization">Visualization</a></li>-->
             <li><a href="#/reports">Reports</a></li>
-            <li><a href="#/files">Files</a></li>
-            <li><a href="#/about">About</a></li>
+            <li><a href="#/files">Manage</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right" nav-tabs>
-            <li ng-show="!loggedIn"><a href="#/login">Login</a></li>
-            <li ng-show="loggedIn"><a ng-click="logout()" href="#">Logout</a></li>
-            <li ng-show="!loggedIn"><a href="#/signup">Signup</a></li>
+            <li ng-show="!loggedIn"><a href="#/login">Log In</a></li>
+            <li ng-show="loggedIn"><a ng-click="logout()" href="#">Log Out</a></li>
+            <li ng-show="!loggedIn"><a href="#/signup">Sign Up</a></li>
           </ul>
         </div>        
       </div>
     </div>
 
-    <div class="container" role="main">
+    <div class="container" role="main" id = "main">
       <div ng-view></div>
     </div>
 
   <div id="footer">
     <div class="container">
-      <p class="text-muted"> © 2013</p>
+        <p class="text-muted"> © 2014 | <a href="#/about">About</a> | <a href="#contact">Contact</a></p>
     </div>
   </div>
 
