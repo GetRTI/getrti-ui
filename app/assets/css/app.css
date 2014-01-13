@@ -5,13 +5,28 @@ HTML, BODY
 	font-family: avenir, cabin, helvetica, arial;
 	color: #333;
 }
-H1
+H1, H2
 {
 	font-weight: normal;
 	text-shadow: none;
 	color: #2F8EAE;
 	font-family: Oswald;
 	font-size: 32px;
+}
+H2
+{
+	font-size: 28px;
+	font-weight: 300;
+}
+::-moz-selection
+{
+	background: #333;
+	color: #FFF;
+}
+::selection
+{
+	background: #333;
+	color: #FFF;
 }
 #main
 {
@@ -75,17 +90,14 @@ H1
 {
 	border: 0px;
 }
-
-.navbar-inverse .navbar-nav > LI > A:hover, 
-.navbar-inverse .navbar-nav > LI > A:focus
+.navbar-inverse .navbar-nav > LI > A:hover, .navbar-inverse .navbar-nav > LI > A:focus
 {
 	background-color: #AE4F2F;
 }
-.navbar-inverse .navbar-nav > .active > a,
-.navbar-inverse .navbar-nav > .active > a:hover,
-.navbar-inverse .navbar-nav > .active > a:focus {
-  color: #ffffff;
-  background-color: #AE4F2F;
+.navbar-inverse .navbar-nav > .active > A, .navbar-inverse .navbar-nav > .active > A:hover, .navbar-inverse .navbar-nav > .active > A:focus
+{
+	color: #FFFFFF;
+	background-color: #AE4F2F;
 }
 .navbar-inverse .navbar-brand
 {
@@ -285,46 +297,50 @@ BODY
 	margin: 2px;
 }
 /*FILE UPLOAD*/
-.fileupload {
-  position: relative;
-  overflow: hidden;
+.fileupload
+{
+	position: relative;
+	overflow: hidden;
 }
-.fileupload input.upload {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
-  cursor: pointer;
-  opacity: 0;
-  filter: alpha(opacity=0);
+.fileupload INPUT.upload
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
 }
 /*ABOUT*/
 .about
 {
 	margin: 0px 20px;
 }
-
-.form-signin .checkbox {
-  font-weight: normal;
-  margin-bottom: 10px;
+.form-signin .checkbox
+{
+	font-weight: normal;
+	margin-bottom: 10px;
 }
-.form-signin, .form-search {
-  margin-top: 150px;
-  margin-bottom: 50px;
+.form-signin, .form-search
+{
+	margin-top: 150px;
+	margin-bottom: 50px;
 }
-
-.container[role="main"] {
-    min-height: 100%;
-    margin-bottom: -60px;
-    height: auto !important;
+.container[role="main"]
+{
+	min-height: 100%;
+	margin-bottom: -60px;
+	height: auto !important;
 }
 /*SEARCH*/
 .input-block-level.form-control.txtSearch
 {
 	width: 90%;
 	float: left;
+	height: 38px;
 }
 .btn-search
 {
@@ -379,49 +395,148 @@ BODY
 	display: block;
 	text-align: center;
 }
-
-.fileupload {
-  position: relative;
-  overflow: hidden;
+/*FILEUPLOAD*/
+.fileupload
+{
+	position: relative;
+	overflow: hidden;
 }
-.fileupload input.upload {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
-  cursor: pointer;
-  opacity: 0;
-  filter: alpha(opacity=0);
+.fileupload INPUT.upload
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
 }
-.carousel-indicators {
-    display: none;
+/*CAROUSEL*/
+.carousel-indicators
+{
+	display: none;
 }
-.carousel-control {
-    position: relative;
-    background: #red;
+.carousel-control
+{
+	position: relative;
+	background: url(#red);
 }
-.carousel-control.left {
-    padding: 0 10px;
-    margin-right: 5px;
-    left: 50%;
+.carousel-control.left
+{
+	padding: 0 10px;
+	margin-right: 5px;
+	left: 50%;
 }
-.carousel-control.right {
-    padding: 0 10px;
-    margin: 5px;
-    left: 50%;
+.carousel-control.right
+{
+	padding: 0 10px;
+	margin: 5px;
+	left: 50%;
 }
-.carosel-container {
-    margin-bottom: 60px;
+.carosel-container
+{
+	margin-bottom: 60px;
 }
-.carousel-image img {
-    width: 500px;
-    height: 500px;
+.carousel-image IMG
+{
+	width: 500px;
+	height: 500px;
 }
-.carousel-text {
-    border: 3px solid #E7B7B7;
-    min-height: 450px;
-    padding: 5px;
+.carousel-text
+{
+	border: 3px solid #E7B7B7;
+	min-height: 450px;
+	padding: 5px;
 }
-
+/*SEARCH RESULTS*/
+.search-list-section
+{
+	border-top: 2px dotted #E0D6B2;
+	padding: 0px;
+}
+.search-list-section UL
+{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+.search-list-section LI
+{
+	border-bottom: 1px solid #E0D6B2;
+	padding: 10px;
+	margin: 0px;
+	overflow: auto;
+}
+.search-list-section LI
+{
+	background-color: #F2EEDE;
+}
+.search-list-section LI.altLI
+{
+	background-color: #F7F4EA;
+}
+H2.searchResults B
+{
+	font-weight: 300;
+	color: #333;
+	font-size: 25px;
+}
+.searchKeyword
+{
+	color: #333;
+}
+.searchTitle A
+{
+	color: #AE4F2F;
+	display: block;
+	font-size: 22px;
+	line-height: 22px;
+	font-weight: normal;
+	padding-bottom: 3px;
+	width: 97%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.searchTitle A:hover
+{
+	color: #2F8EAE;
+}
+.searchLink A
+{
+	color: #2F8EAE;
+	text-decoration: underline;
+}
+.searchDescription
+{
+	/*[empty]background-color:;*/
+	font-size: 14px;
+	display: block;
+}
+.searchKeywords
+{
+	float: right;
+	width: 25%;
+}
+.searchLink
+{
+	width: 70%;
+	float: left;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.searchKeywords A
+{
+	color: #2F8EAE;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+.searchLink A
+{
+	color: #2F8EAE;
+	font-size: 12px;
+	text-decoration: underline;
+}
