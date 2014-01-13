@@ -31,6 +31,7 @@ H2
 #main
 {
 	min-height: 500px;
+	padding-top: 15px;
 }
 .menu
 {
@@ -142,15 +143,34 @@ BODY
 .form-signin
 {
 	max-width: 400px;
-	padding: 0px 30px 20px;
+	min-width: 350px;
+	padding: 5px 30px 20px;
 	margin: 0 auto;
-	overflow: auto;
-	border-radius: 2px;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	-webkit-box-shadow: 0 1px 2px #ccc;
-	box-shadow: 0 1px 2px #CCC;
+	-webkit-box-shadow: 0 1px 2px #aaa;
+	box-shadow: 0 1px 2px #AAA;
 	background-color: #FFF;
+	position: absolute;
+	right: 50px;
+	border: 2px solid #AE4F2F;
+}
+.form-signin:after
+{
+	bottom: 100%;
+	left: 65%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(174, 79, 47, 0);
+	border-bottom-color: #AE4F2F;
+	border-width: 14px;
+	margin-left: -10px;
+}
+#registerForm.form-signin:after
+{
+	left: 90%;
 }
 .form-signin .form-control:focus
 {
@@ -178,7 +198,7 @@ BODY
 {
 	float: right;
 	margin: 0px;
-	background: #CC6644;
+	background: #4E933B;
 	text-shadow: none;
 	font-size: 20px;
 	border: 0px;
@@ -194,7 +214,7 @@ BODY
 }
 .form-signin BUTTON:hover
 {
-	background: #699A00;
+	background: #CC6644;
 	text-shadow: none;
 }
 .form-signin .form-input .errors
@@ -272,11 +292,7 @@ BODY
 	font-weight: normal;
 	margin-bottom: 10px;
 }
-.form-signin, .form-search
-{
-	margin-top: 8%;
-}
-.form-signin #password2
+.form-signin .password2
 {
 	margin-top: -1px;
 	border-top: 0px;
@@ -324,18 +340,17 @@ BODY
 	font-weight: normal;
 	margin-bottom: 10px;
 }
-.form-signin, .form-search
-{
-	margin-top: 150px;
-	margin-bottom: 50px;
-}
 .container[role="main"]
 {
 	min-height: 100%;
-	margin-bottom: -60px;
+	margin-bottom: 10px;
 	height: auto !important;
 }
 /*SEARCH*/
+.form-search
+{
+	margin-top: 5%;
+}
 .input-block-level.form-control.txtSearch
 {
 	width: 90%;
@@ -358,7 +373,7 @@ BODY
 	color: #FFF;
 	height: 38px;
 	line-height: 36px;
-	width: 40px;
+	width: 100%;
 	font-size: 18px;
 	-webkit-border-top-right-radius: 3px;
 	-webkit-border-bottom-right-radius: 3px;
