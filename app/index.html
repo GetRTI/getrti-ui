@@ -15,6 +15,8 @@
     <link href="assets/css/fonts.css" rel="stylesheet">    
     <!-- Custom styles for this template -->
     <link href="assets/css/app.css" rel="stylesheet">
+    
+    
   </head>
 
 <body style="">
@@ -35,10 +37,10 @@
             <li><a href="#/search">Search</a></li>
             <li><a href="#/browse">Browse</a></li>
             <!--<li><a href="#/visualization">Visualization</a></li>-->
-            <li><a href="#/reports">Reports</a></li>
-            <li><a href="#/files">Manage</a></li>
+            <li><a href="#/reports">Analyze</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right" nav-tabs>
+            <li><a href="#/files">Manage</a></li>          
             <li ng-show="!loggedIn"><a href="#/login">Sign In</a></li>
             <li ng-show="loggedIn"><a ng-click="logout()" href="#">Sign Out</a></li>
             <li ng-show="!loggedIn"><a href="#/signup">Sign Up</a></li>
@@ -48,9 +50,12 @@
     </div>
 
     <div class="container" role="main" id = "main">
-      <div ng-view></div>
-    </div>
+      <div ng-view>
 
+    
+      
+      </div>
+    </div><!--//main-->
   <div id="footer">
     <div class="container">
         <p class="text-muted"> © 2014 | <a href="#/about">About</a> | <a href="#contact">Contact</a></p>

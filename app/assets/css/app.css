@@ -555,3 +555,199 @@ H2.searchResults B
 	font-size: 12px;
 	text-decoration: underline;
 }
+/*STYLES FOR THE EDIT FILE PAGE*/
+.file-actions, .files-reader
+{
+	margin-top: 10px;
+}
+.txtNumber
+{
+	-moz-border-radius: 75px;
+	-webkit-border-radius: 75px;
+	border-radius: 75px;
+	background-color: #FC0;
+	height: 22px;
+	width: 22px;
+	line-height: 22px;
+	float: left;
+	margin-right: 10px;
+	margin-left: 3px;
+	text-align: center;
+}
+.rowInfo
+{
+	margin-bottom: 5px;
+}
+.rowAction
+{
+	margin: 10px 0px;
+}
+.rowTxt
+{
+	background-color: #FFF;
+	border: 1px solid #AAA;
+	border-top: 0px;
+	margin-bottom: 10px;
+	overflow: auto;
+}
+.rowMoreInfo
+{
+	border: 1px solid #AAA;
+	background-color: #4E933B;
+	color: #FFF;
+	padding: 10px;
+	height: 150px;
+	border-bottom: 0px;
+	border-top: 0px;
+}
+.rowTxt .txtNumber
+{
+	margin: 4px 3px;
+}
+.rowAction .txtNumber
+{
+	margin-top: 10px;
+}
+.txtMore
+{
+	float: right;
+	width: 30px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+}
+A.btnMore
+{
+	padding-top: 5px;
+	line-height: 30px;
+	display: block;
+	height: 30px;
+	background-color: #333;
+	color: #FFF;
+	font-size: 22px;
+}
+.displayBlock
+{
+	display: block;
+}
+.displayNone
+{
+	display: none;
+}
+A.btnMore:hover
+{
+	background-color: #AE4F2F;
+}
+A.showMoreActive
+{
+	background-color: #4E933B;
+}
+#iFile
+{
+	width: 100%;
+	border: 1px solid #AAA;
+	margin-bottom: 10px;
+}
+#txtTags
+{
+	width: 85%;
+	border: 0px;
+	padding: 5px 3px 2px;
+	display: block;
+	font-size: 14px;
+	float: left;
+	background-color: #FFF;
+}
+.file-actions .btn
+{
+	font-size: 18px;
+}
+.rowPages
+{
+	margin-bottom: 2px;
+}
+.paginate
+{
+	margin-top: 5px;
+}
+.paginate.pag1
+{
+	/*first page styles*/
+}
+.paginate
+{
+	margin: 0px auto;
+	padding: 0px;
+	overflow: auto;
+}
+.paginate.pag1 LI
+{
+	list-style: none;
+	font-weight: normal;
+	font-size: 11px;
+}
+.paginate.pag1 LI A
+{
+	display: block;
+	float: left;
+	color: #717171;
+	background: transparent;
+	text-decoration: none;
+	padding: 3px 7px;
+	margin-right: 6px;
+	border-radius: 3px;
+	border: 1px solid #C0C0C0;
+	box-shadow: inset 0px 1px rgba(255, 255, 255, 0.7), 0px 1px 3px rgba(0, 0, 0, 0.1);
+	text-shadow: 1px 1px rgba(255, 255, 255, 0.7);
+}
+.paginate.pag1 LI A:hover
+{
+	background: #EEE;
+	color: #555;
+}
+.paginate.pag1 LI A:active, .paginate.pag1 LI.current
+{
+	-webkit-box-shadow: inset -1px 2px 5px rgba(0,0,0,0.25);
+	-moz-box-shadow: inset -1px 2px 5px rgba(0,0,0,0.25);
+	box-shadow: inset -1px 2px 5px rgba(0, 0, 0, 0.25);
+}
+.paginate.pag1 LI.current
+{
+	display: block;
+	float: left;
+	border: 1px solid #C0C0C0;
+	padding: 3px 7px;
+	margin-right: 6px;
+	border-radius: 3px;
+	background-color: #4E933B;
+	color: #FFF;
+}
+.paginate.pag1 LI.single
+{
+	float: right;
+	float: right;
+	margin-top: 7px;
+	color: #999;
+	margin-right: 2px;
+}
+.file-actions .btn-primary
+{
+	margin-right: 5px;
+}
+.file-actions SELECT
+{
+	margin-left: 30px;
+	width: 60%;
+	padding: 3px;
+	font-size: 16px;
+}
+.file-actions LABEL
+{
+	width: 80px;
+	font-weight: normal;
+	font-size: 16px;
+}
+.file-actions .control-group
+{
+	margin-bottom: 5px;
+}
