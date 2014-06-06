@@ -8,3 +8,11 @@ angular.module('myApp.filters', []).
       return String(text).replace(/\%VERSION\%/mg, version);
     };
   }]);
+
+angular.module('myApp.filters', []).
+filter('offset', function() {
+    return function(input, start) {
+        start = parseInt(start, 10);
+        return input.slice(start);
+    };
+});

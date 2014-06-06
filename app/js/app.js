@@ -12,10 +12,16 @@ angular.module('myApp', [
 
     $routeProvider.when('/', 
     	{
-    		templateUrl: 'partials/main.tpl.html', 
+    		templateUrl: 'partials/main.tpl.html'
     	}
     );
-    $routeProvider.when('/about', 
+    $routeProvider.when('/search',
+        {
+            templateUrl: 'partials/search.tpl.html',
+            controller: 'SearchCtrl'
+        }
+    );
+        $routeProvider.when('/about',
         {
             templateUrl: 'partials/about.tpl.html'
         }
