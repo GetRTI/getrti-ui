@@ -91,14 +91,14 @@ angular.module('myApp.controllers', []).
             })
         };
     }).
-    
+
     controller('FileCtrl', function($scope, $modal, FileService, ngTableParams) {
         FileService.get().then(function(data){
             $scope.files = data.data;
             $scope.tableParams = new ngTableParams({
                 page: 1,            // show first page
                 count: 10           // count per page
-                }, 
+                },
                 {
                     total: $scope.files.length, // length of data
                     getData: function($defer, params) {
@@ -181,4 +181,141 @@ angular.module('myApp.controllers', []).
             var file = $scope.selectedFile;
             FileService.update(file);
         };
+    }).
+
+    controller('SearchCtrl', function($scope, $rootScope, $location, AuthService) {
+
+
+        $scope.record = [
+
+            { Country: 'Algeria',
+              Station: 'Algiers',
+              Public_Information_Officer: 'Mr. A. V. Satyanarayana  First Secretary',
+              Appellate_Authority: 'Dr. Ashok K. Amrohi,   Ambassador',
+              Email: 'Amb(dot)algiers[at]mea(dot)gov(dot)in',
+              Fax_No: '00-213-21-924011',
+              url: 'http://cic.gov.in/pio_and_aa_of_indian_missions.htm' },
+
+            { Country: 'Australia',
+              Station: 'Canberra',
+              Public_Information_Officer: 'Mr. N. G. Vasanth Kumar  First Secretary',
+              Appellate_Authority: 'Mr. Vinod Kumar,   Dy. High Commissioner',
+              Email: 'hoc[at]hcindia-au(dot)org',
+              Fax_No: '61-2-62731308',
+              url: 'http://cic.gov.in/pio_and_aa_of_indian_missions.htm' },
+
+            { Country: 'Bahrain',
+              Station: 'Bahrain1',
+              Public_Information_Officer: 'Mr. A. K. Bhatnagar,  First Secretary',
+              Appellate_Authority: 'Mr. Balkrishna Shetty,   Ambassador',
+              Email: 'ndemb[at]batelco(dot)com(dot)bh  counslrs[at]batelco(dot)combh',
+              Fax_No: '00973 17717363',
+              url: 'http://cic.gov.in/pio_and_aa_of_indian_missions.htm' },
+
+            { Country: 'Bahrain',
+                Station: 'Bahrain2',
+                Public_Information_Officer: 'Mr. A. K. Bhatnagar,  First Secretary',
+                Appellate_Authority: 'Mr. Balkrishna Shetty,   Ambassador',
+                Email: 'ndemb[at]batelco(dot)com(dot)bh  counslrs[at]batelco(dot)combh',
+                Fax_No: '00973 17717363',
+                url: 'http://cic.gov.in/pio_and_aa_of_indian_missions.htm' },
+
+            { Country: 'Bahrain',
+                Station: 'Bahrain3',
+                Public_Information_Officer: 'Mr. A. K. Bhatnagar,  First Secretary',
+                Appellate_Authority: 'Mr. Balkrishna Shetty,   Ambassador',
+                Email: 'ndemb[at]batelco(dot)com(dot)bh  counslrs[at]batelco(dot)combh',
+                Fax_No: '00973 17717363',
+                url: 'http://cic.gov.in/pio_and_aa_of_indian_missions.htm' },
+            { Country: 'Bahrain',
+                Station: 'Bahrain4',
+                Public_Information_Officer: 'Mr. A. K. Bhatnagar,  First Secretary',
+                Appellate_Authority: 'Mr. Balkrishna Shetty,   Ambassador',
+                Email: 'ndemb[at]batelco(dot)com(dot)bh  counslrs[at]batelco(dot)combh',
+                Fax_No: '00973 17717363',
+                url: 'http://cic.gov.in/pio_and_aa_of_indian_missions.htm' },
+            { Country: 'Bahrain',
+                Station: 'Bahrain5',
+                Public_Information_Officer: 'Mr. A. K. Bhatnagar,  First Secretary',
+                Appellate_Authority: 'Mr. Balkrishna Shetty,   Ambassador',
+                Email: 'ndemb[at]batelco(dot)com(dot)bh  counslrs[at]batelco(dot)combh',
+                Fax_No: '00973 17717363',
+                url: 'http://cic.gov.in/pio_and_aa_of_indian_missions.htm' },
+            { Country: 'Bahrain',
+                Station: 'Bahrain6',
+                Public_Information_Officer: 'Mr. A. K. Bhatnagar,  First Secretary',
+                Appellate_Authority: 'Mr. Balkrishna Shetty,   Ambassador',
+                Email: 'ndemb[at]batelco(dot)com(dot)bh  counslrs[at]batelco(dot)combh',
+                Fax_No: '00973 17717363',
+                url: 'http://cic.gov.in/pio_and_aa_of_indian_missions.htm' }
+        ];
+
+        $scope.searchData = function(){
+            $scope.objAry = new Array();
+              if($scope.searchText )
+              {
+
+                 for(var i =0 ; i< $scope.record.length;i++)
+                 {
+                     //alert($scope.record[i]['Country']);
+                     if($scope.record[i]['Country']== $scope.searchText)
+                     {
+                         //alert($scope.record[i]['Country']);
+                         $scope.objAry.push($scope.record[i]);
+                         //console.log($scope.objAry);
+                     }
+                 }
+              }
+              else
+              {
+                 return $scope.objAry = null;
+              }
+        }
+
+        $scope.itemsPerPage = 2;
+        $scope.currentPage = 0;
+        $scope.range = function() {
+            var rangeSize = 2;
+            var ret = [];
+            var start;
+
+            start = $scope.currentPage;
+            if ( start > $scope.pageCount()-rangeSize ) {
+                start = $scope.pageCount()-rangeSize+1;
+            }
+
+            for (var i=start; i<start+rangeSize; i++) {
+                ret.push(i);
+            }
+            return ret;
+        };
+
+        $scope.prevPage = function() {
+            if ($scope.currentPage > 0) {
+                $scope.currentPage--;
+            }
+        };
+
+        $scope.prevPageDisabled = function() {
+            return $scope.currentPage === 0 ? "disabled" : "";
+        };
+
+        $scope.pageCount = function() {
+            return Math.ceil($scope.objAry.length/$scope.itemsPerPage)-1;
+        };
+
+        $scope.nextPage = function() {
+            if ($scope.currentPage < $scope.pageCount()) {
+                $scope.currentPage++;
+            }
+        };
+
+        $scope.nextPageDisabled = function() {
+            return $scope.currentPage === $scope.pageCount() ? "disabled" : "";
+        };
+
+        $scope.setPage = function(n) {
+            $scope.currentPage = n;
+        };
+
     });

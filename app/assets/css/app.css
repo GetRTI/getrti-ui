@@ -635,6 +635,7 @@ A.showMoreActive {
 .file-actions .control-group {
 	margin-bottom: 5px;
 }
+<<<<<<< HEAD
 
 .project {
 	background: white;
@@ -711,4 +712,33 @@ A.showMoreActive {
 
 .thumbnail:hover p,.thumbnail:hover h3{
 	color: white;
+=======
+.search_result{
+    background: white;
+    border-radius: 7px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #AE4F2F;
+}
+
+.search_result li {
+
+list-style: none;
+
+}
+
+.search{
+    margin-left: -9%;
+}
+
+.pagination li {
+
+    list-style: none;
+
+}
+
+.pager  li{
+    display: inline;
+    padding:15px;
+>>>>>>> 497ba97c2087070552f61d0333195ceaaa8e118b
 }

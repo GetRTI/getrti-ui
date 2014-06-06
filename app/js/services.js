@@ -145,4 +145,18 @@ factory("FlashService", function($rootScope) {
   }
 });
 
+//factory('APIservice', function($http) {
+//
+//    var testAPI = {};
+//
+//        testAPI.getDrivers = function() {
+//        return $http({
+//            method: 'GET',
+//            url: 'http://localhost:8080/api/bears'
+//        });
+//    }
+//
+//    return testAPI;
+//});
+
 
