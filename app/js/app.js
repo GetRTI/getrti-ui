@@ -26,6 +26,22 @@ angular.module('myApp', [
             controller: 'FileCtrl'
         }
     );
+    
+    $routeProvider.when('/contributors', 
+        {
+            templateUrl: 'partials/contributors.tpl.html',
+        }
+    );
+    
+  
+    
+     $routeProvider.when('/search', 
+        {
+            templateUrl: 'partials/search.tpl.html',
+        }
+    );
+    
+    
     $routeProvider.when('/file/:fileId', 
         {
             templateUrl: 'partials/file_details.tpl.html',
