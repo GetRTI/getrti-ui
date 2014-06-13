@@ -1,8 +1,8 @@
 <div class="search" >
 	<form class="form-search" ng-submit="searchData()">
 		<div class="row form-group">
-			<div class="col-sm-7 col-sm-offset-1">
-				<input type="text" ng-model="searchText" class="input-block-level form-control txtSearch" placeholder="Search for an RTI file...">
+			<div class="col-sm-7 col-sm-offset-3">
+				<input type="text" ng-model="searchText" class="input-block-level form-control txtSearch" placeholder="Search for Public Information Officer">
 				<button class="btn-search" type="submit">
 					<i class="fa fa-search fa-fs"></i>
 				</button>
@@ -10,7 +10,7 @@
 				<a id="advanced_search" ng-click="goAdvanced = !goAdvanced" class="">Advanced Search</a>
 			</div>
 
-			<div class="col-sm-7 col-sm-offset-1" id="adv_form"  ng-show="goAdvanced">
+			<div class="col-sm-7 col-sm-offset-3" id="adv_form"  ng-show="goAdvanced">
 				<form class="form-horizontal" >
 					<label class="control-label" for="name">Name</label>
 					<input id="name" name="name" class="form-control"  type="text">
@@ -49,43 +49,44 @@
 
 	</form>
 </div>
-<div ng-controller="SearchCtrl">
-	<div class="search_result" ng-repeat='data in objAry |
-	offset: currentPage*itemsPerPage |
-	limitTo: itemsPerPage'>
-		{{country}}
-		<li>
-			Country :{{data['Country']}}
-		</li>
-		<li>
-			Station :{{data['Station']}}
-		</li>
-		<li>
-			Public_Information_Officer :{{data['Public_Information_Officer']}}
-		</li>
-		<li>
-			Appellate_Authority :{{data['Appellate_Authority']}}
-		</li>
-		<li>
-			Fax_No :{{data['Fax_No']}}
-		</li>
-		<li>
-			URL :{{data['url']}}
-		</li>
-	</div>
 
-	<div ng-if="objAry[0] != null" >
-		<ul class="pager">
-			<li ng-class="prevPageDisabled()">
-				<a href ng-click="prevPage()">« Prev</a>
-			</li>
-			<li ng-repeat="n in range()" ng-class="{active: n == currentPage}" ng-click="setPage(n)">
-				<a href="#/search">{{n+1}}</a>
-			</li>
-			<li ng-class="nextPageDisabled()">
-				<a href ng-click="nextPage()">Next »</a>
-			</li>
-		</ul>
+<div class="row" id="search_results">
+	<div class="col-sm-8 col-sm-offset-2 panel search_panel">
+
+		<div class="col-sm-8">
+			<p class="searcn_name">
+				Mr. N. G. Vasanth Kumar
+			</P>
+			<p class="search_designation">
+				Public Information Officer, Food Association
+			</P>
+			<p class="search_address">
+				Keas 69 Str. 15234, Chalandri</br>
+				Athens, Greece</br>
+			</p>
+		</div>
+
+		<div class="col-sm-4 search_contacts">
+			<p>
+				<span>Contact: </span>+91 987654321
+			</P>
+			<p>
+				<span>Fax: </span>+040 5645654564
+			</P>
+			<p>
+				<span>Email: </span>vasanthkumar@fciabc.gov.in
+			</p>
+		</div>
 	</div>
 </div>
 
+<div class="row">
+	<ul class="pager">
+		<li>
+			<a href="#">Previous</a>
+		</li>
+		<li>
+			<a href="#">Next</a>
+		</li>
+	</ul>
+</div>

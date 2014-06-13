@@ -769,3 +769,26 @@ A.showMoreActive {
 	width: 110px;
 	padding: 60px 0;
 }
+
+.search_panel {
+	padding: 25px;
+}
+
+.search_panel span {
+	color: #AE4F2F;
+}
+
+.searcn_name {
+	font-weight: 900;
+	font-size: 17px;
+}
+
+
+.search_designation {
+	font-weight: 500;
+	font-size: 15px;
+}
+.search_contacts p{
+	padding-top: 50px;
+margin: 0;
+}
