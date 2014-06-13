@@ -788,7 +788,11 @@ A.showMoreActive {
 	font-weight: 500;
 	font-size: 15px;
 }
-.search_contacts p{
+.search_contacts 
+{
 	padding-top: 50px;
+}
+.search_contacts p{
+	
 margin: 0;
 }
