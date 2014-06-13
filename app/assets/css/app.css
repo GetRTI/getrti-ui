@@ -704,39 +704,68 @@ A.showMoreActive {
 	cursor: pointer;
 }
 
-.thumbnail:hover{
-	background-color: #AE4F2F;
-
-}
-
-.thumbnail:hover p,.thumbnail:hover h3{
-	color: white;
-}
-.search_result{
-    background: white;
-    border-radius: 7px;
-    padding: 10px;
-    margin-bottom: 20px;
-    color: #AE4F2F;
+.search_result {
+	background: white;
+	border-radius: 7px;
+	padding: 10px;
+	margin-bottom: 20px;
+	color: #AE4F2F;
 }
 
 .search_result li {
 
-list-style: none;
-
+	list-style: none;
 }
 
-.search{
-    margin-left: -9%;
+.search {
+	margin-left: -9%;
 }
 
 .pagination li {
 
-    list-style: none;
-
+	list-style: none;
 }
 
-.pager  li{
-    display: inline;
-    padding:15px;
+.pager  li {
+	display: inline;
+	padding: 15px;
+}
+.projects {
+	height: 350px;
+	position: relative;
+	padding: 0;
+}
+
+.zoom {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #F9CB8F;
+	opacity: 0;
+	transition: all 0.2s ease-in-out;
+	display: table;
+}
+
+.zoom a {
+	font-size: 50px;
+	color: #AE4F2F;
+	transition: all 0.2s ease-in-out;
+	-webkit-font-smoothing: antialiased;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	text-decoration: none;
+}
+
+.zoom:hover {
+	opacity: 0.9;
+}
+
+.zoom:hover a {
+	font-size: 25px;
+}
+
+.projects img {
+	width: 110px;
+	padding: 60px 0;
 }
