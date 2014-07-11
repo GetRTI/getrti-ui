@@ -283,8 +283,22 @@ BODY {
 	filter: alpha(opacity=0);
 }
 /*ABOUT*/
+
+.about p{
+text-align: justify;	
+}
+
+.about h1{
+	padding-bottom: 20px;
+font-size: 80px;
+}
+
 .about {
 	margin: 0px 20px;
+width: 60%;
+margin: 0 auto;
+background: white;
+padding: 40px;
 }
 .form-signin .checkbox {
 	font-weight: normal;
