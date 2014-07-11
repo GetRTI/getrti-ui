@@ -183,7 +183,16 @@ angular.module('myApp.controllers', []).
         };
     }).
 
-    controller('SearchCtrl', function($scope, $rootScope, $location, AuthService) {
+    controller('SearchCtrl', function($scope, $rootScope, $location, AuthService, $http, $q) {
+        console.log("Search");
+        $http.get('https://getrti.couchappy.com/getrti/_all_docs?limit=20&include_docs=true')
+          .then(function(response) {
+              console.log(response);
+            }, function(response) {
+              return $q.reject(response.data);
+          }
+        );
+
 
 
         $scope.record = [

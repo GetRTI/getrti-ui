@@ -8,7 +8,10 @@ angular.module('myApp', [
     'myApp.services', 
     'myApp.directives', 'ngTable', 'angularFileUpload', 'ui.bootstrap', 'ngCookies']).
 
-  config(['$routeProvider', function($routeProvider) {
+  config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
+    // for sending CORS request
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
     $routeProvider.when('/', 
     	{
@@ -38,15 +41,6 @@ angular.module('myApp', [
             templateUrl: 'partials/contributors.tpl.html',
         }
     );
-    
-  
-    
-     $routeProvider.when('/search', 
-        {
-            templateUrl: 'partials/search.tpl.html',
-        }
-    );
-    
     
     $routeProvider.when('/file/:fileId', 
         {
