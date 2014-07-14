@@ -706,6 +706,7 @@ A.showMoreActive {
 .social_icons img {
 	width: 27px;
 	margin: 10px;
+	display: none;
 }
 
 .contributor {
