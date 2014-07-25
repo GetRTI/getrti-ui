@@ -7,10 +7,10 @@
 					<i class="fa fa-search fa-fs"></i>
 				</button>
 
-				<a id="advanced_search" ng-click="goAdvanced = !goAdvanced" class="">Advanced Search</a>
+				<!-- <a id="advanced_search" ng-click="goAdvanced = !goAdvanced" class="">Advanced Search</a> -->
 			</div>
 
-			<div class="col-sm-7 col-sm-offset-3" id="adv_form"  ng-show="goAdvanced">
+			<!-- <div class="col-sm-7 col-sm-offset-3" id="adv_form"  ng-show="goAdvanced">
 				<form class="form-horizontal" >
 					<label class="control-label" for="name">Name</label>
 					<input id="name" name="name" class="form-control"  type="text">
@@ -43,13 +43,15 @@
 					</button>
 				</form>
 
-			</div>
+			</div> -->
 
 		</div>
 
 	</form>
 </div>
-
+<p style="text-align: center" ng-hide="loader == 'hide'";>
+	<img src="assets/images/loader.gif" />
+</p>
 <div class="row" id="search_results" >
 	<div class="col-sm-8 col-sm-offset-2 panel search_panel" data-ng-repeat="resultdata in results.data">
 
@@ -57,13 +59,19 @@
 			<p class="searcn_name">
 				{{resultdata.name}}
 			</P>
-			<p class="search_designation"> 
-				{{resultdata.designation}}, {{resultdata.department}} 
+			<p class="search_designation">
+				{{resultdata.designation}}, {{resultdata.department}}
 			</P>
 			<p class="search_address">
-				<span ng-hide="resultdata.address == 'null'";><strong>Registered Address</strong>: {{resultdata.address}}<br></span>
-				<span ng-hide="resultdata.city == 'null'";><strong>City</strong>: {{resultdata.city}}<br></span>
-				<span ng-hide="resultdata.state == 'null'";><strong>State</strong>: {{resultdata.state}}<br></span>
+				<span ng-hide="resultdata.address == 'null'";><strong>Registered Address</strong>: {{resultdata.address}}
+					<br>
+				</span>
+				<span ng-hide="resultdata.city == 'null'";><strong>City</strong>: {{resultdata.city}}
+					<br>
+				</span>
+				<span ng-hide="resultdata.state == 'null'";><strong>State</strong>: {{resultdata.state}}
+					<br>
+				</span>
 				<span ng-hide="resultdata.country == 'null'";><strong>Country</strong>: {{resultdata.country}}</span>
 			</p>
 			<span ng-hide="resultdata.url == 'null'";>Website: </span><a href="{{resultdata.url}}" target="_blank">{{resultdata.url}}</a>

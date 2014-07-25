@@ -132,7 +132,7 @@ angular.module('myApp.controllers', []).
 
 	//Deletes the multiple files
 	$scope.
-	delete  =
+	delete   =
 	function() {
 		var filesToDelete = Object.keys($scope.allfiles.selected);
 		FileService.
@@ -164,22 +164,23 @@ angular.module('myApp.controllers', []).
 		$scope.selectedFile = {};
 	}
 
-	// Save any changes made to this file 
+	// Save any changes made to this file
 	$scope.publish = function() {
 		var file = $scope.selectedFile;
 		FileService.update(file);
 	};
 }).controller('SearchCtrl', function($scope, $rootScope, $location, AuthService, $http, $q) {
 	console.log("Search");
-
+$scope.loader="hide";
 	$scope.search = function() {
 		var term = $scope.term.split(' ').join('+');
-	
-
-		$http.get('http://api.getrti.org/search/'+term).then(function(response) {
-			$scope.results=response;
+$scope.loader="show";
+		$http.get('http://api.getrti.org/search/' + term).then(function(response) {
+			$scope.results = response;
+			$scope.loader="hide";
 			console.log(response);
 		}, function(response) {
+			$scope.loader="hide";
 			return $q.reject(response.data);
 		});
 
