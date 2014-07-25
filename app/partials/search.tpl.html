@@ -2,8 +2,8 @@
 	<form class="form-search" ng-submit="searchData()">
 		<div class="row form-group">
 			<div class="col-sm-7 col-sm-offset-3">
-				<input type="text" ng-model="searchText" class="input-block-level form-control txtSearch" placeholder="Search for Public Information Officer">
-				<button class="btn-search" type="submit">
+				<input type="text"  data-ng-model="term" class="input-block-level form-control txtSearch" placeholder="Search for Public Information Officer">
+				<button class="btn-search" data-ng-click="search()">
 					<i class="fa fa-search fa-fs"></i>
 				</button>
 
@@ -50,31 +50,36 @@
 	</form>
 </div>
 
-<div class="row" id="search_results">
-	<div class="col-sm-8 col-sm-offset-2 panel search_panel">
+<div class="row" id="search_results" >
+	<div class="col-sm-8 col-sm-offset-2 panel search_panel" data-ng-repeat="resultdata in results.data">
 
 		<div class="col-sm-8">
 			<p class="searcn_name">
-				Mr. N. G. Vasanth Kumar
+				{{resultdata.name}}
 			</P>
-			<p class="search_designation">
-				Public Information Officer, Food Association
+			<p class="search_designation"> 
+				{{resultdata.designation}}, {{resultdata.department}} 
 			</P>
 			<p class="search_address">
-				Keas 69 Str. 15234, Chalandri</br>
-				Athens, Greece</br>
+				{{resultdata.address}}<br>
+				{{resultdata.city}}<br>
+				{{resultdata.state}}<br>
+				{{resultdata.country}}<br>
 			</p>
 		</div>
 
 		<div class="col-sm-4 search_contacts">
 			<p>
-				<span>Contact: </span>+91 987654321
+				<span>Contact: </span>{{resultdata.phone}}
 			</P>
 			<p>
-				<span>Fax: </span>+040 5645654564
+				<span>Fax: </span>{{resultdata.fax}}
 			</P>
 			<p>
-				<span>Email: </span>vasanthkumar@fciabc.gov.in
+				<span>Email: </span>{{resultdata.email}}
+			</p>
+			<p>
+				<span>Website: </span>{{resultdata.url}}
 			</p>
 		</div>
 	</div>
