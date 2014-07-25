@@ -172,12 +172,14 @@ angular.module('myApp.controllers', []).
 }).controller('SearchCtrl', function($scope, $rootScope, $location, AuthService, $http, $q) {
 	console.log("Search");
 $scope.loader="hide";
+$scope.showresults="false";
 	$scope.search = function() {
 		var term = $scope.term.split(' ').join('+');
 $scope.loader="show";
 		$http.get('http://api.getrti.org/search/' + term).then(function(response) {
 			$scope.results = response;
 			$scope.loader="hide";
+			$scope.showresults="true";
 			console.log(response);
 		}, function(response) {
 			$scope.loader="hide";

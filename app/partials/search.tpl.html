@@ -1,4 +1,14 @@
 <div class="search" >
+
+	<div class="col-sm-11 col-sm-offset-1 " ng-show="showresults=='false'" style="background: white;padding: 30px;margin-bottom: 50px;">
+		<h2>Do you want to file an RTI? Don't know who to address your RTI application to?</h2>
+		<p>
+			The Public Information Officer (PIO) is the Central Point of Contact (POC) for filing applications under the Right to Information (RTI). The PIO is also responsible for providing the requested information to the Information Seeker. Thus the role of the PIO is very critical for the success of the RTI act.
+			<br>
+			<br>
+			Citizens often find it very difficult to the find the relevant PIO for a particular public authority.  This discourages a lot of them from using the RTI act. This application allows you to search for the relevant PIO for filing the RTI both for Central Government and State Governments. The data is collated from various government sources.
+		</p>
+	</div>
 	<form class="form-search" ng-submit="searchData()">
 		<div class="row form-group">
 			<div class="col-sm-7 col-sm-offset-3">
@@ -11,37 +21,37 @@
 			</div>
 
 			<!-- <div class="col-sm-7 col-sm-offset-3" id="adv_form"  ng-show="goAdvanced">
-				<form class="form-horizontal" >
-					<label class="control-label" for="name">Name</label>
-					<input id="name" name="name" class="form-control"  type="text">
+			<form class="form-horizontal" >
+			<label class="control-label" for="name">Name</label>
+			<input id="name" name="name" class="form-control"  type="text">
 
-					<label class="control-label" for="designation">Designation</label>
-					<select id="designation" name="designation" class="form-control" >
-						<option>Option one</option>
-						<option>Option two</option>
-					</select>
+			<label class="control-label" for="designation">Designation</label>
+			<select id="designation" name="designation" class="form-control" >
+			<option>Option one</option>
+			<option>Option two</option>
+			</select>
 
-					<label class="control-label" for="department">Department</label>
-					<select id="department" name="department" class="form-control" >
-						<option>Option one</option>
-						<option>Option two</option>
-					</select>
+			<label class="control-label" for="department">Department</label>
+			<select id="department" name="department" class="form-control" >
+			<option>Option one</option>
+			<option>Option two</option>
+			</select>
 
-					<label class="control-label" for="area">Area</label>
-					<select id="area" name="area" class="form-control" >
-						<option>Option one</option>
-						<option>Option two</option>
-					</select>
+			<label class="control-label" for="area">Area</label>
+			<select id="area" name="area" class="form-control" >
+			<option>Option one</option>
+			<option>Option two</option>
+			</select>
 
-					<label class="control-label" for="state">State</label>
-					<select id="state" name="state" class="form-control" >
-						<option>Option one</option>
-						<option>Option two</option>
-					</select>
-					<button id="avd_sub" class="btn-browse" type="submit">
-						Search
-					</button>
-				</form>
+			<label class="control-label" for="state">State</label>
+			<select id="state" name="state" class="form-control" >
+			<option>Option one</option>
+			<option>Option two</option>
+			</select>
+			<button id="avd_sub" class="btn-browse" type="submit">
+			Search
+			</button>
+			</form>
 
 			</div> -->
 
@@ -52,7 +62,17 @@
 <p style="text-align: center" ng-hide="loader == 'hide'";>
 	<img src="assets/images/loader.gif" />
 </p>
+
 <div class="row" id="search_results" >
+
+	<div class="col-sm-8 col-sm-offset-2 " ng-show="results.data.length>0">
+		<h5>{{results.data.length}} results found</h5>
+	</div>
+	
+	<div class="col-sm-8 col-sm-offset-2 " ng-show="results.data.length==0">
+		<h4>No Results Found</h4>
+	</div>
+	
 	<div class="col-sm-8 col-sm-offset-2 panel search_panel" data-ng-repeat="resultdata in results.data">
 
 		<div class="col-sm-8">
