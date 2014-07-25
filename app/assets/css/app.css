@@ -28,6 +28,10 @@ H2 {
 	padding-top: 15px;
 }
 
+.search_address span {
+	color: black !important;
+}
+
 .search_address{
 	padding-top: 5px;
 }

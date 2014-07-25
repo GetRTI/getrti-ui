@@ -61,31 +61,29 @@
 				{{resultdata.designation}}, {{resultdata.department}} 
 			</P>
 			<p class="search_address">
-				{{resultdata.address}}<br>
-				{{resultdata.city}}<br>
-				{{resultdata.state}}<br>
-				{{resultdata.country}}<br>
+				<span ng-hide="resultdata.address == 'null'";><strong>Registered Address</strong>: {{resultdata.address}}<br></span>
+				<span ng-hide="resultdata.city == 'null'";><strong>City</strong>: {{resultdata.city}}<br></span>
+				<span ng-hide="resultdata.state == 'null'";><strong>State</strong>: {{resultdata.state}}<br></span>
+				<span ng-hide="resultdata.country == 'null'";><strong>Country</strong>: {{resultdata.country}}</span>
 			</p>
+			<span ng-hide="resultdata.url == 'null'";>Website: </span><a href="{{resultdata.url}}" target="_blank">{{resultdata.url}}</a>
 		</div>
 
 		<div class="col-sm-4 search_contacts">
-			<p>
+			<p ng-hide="resultdata.phone == 'null'";>
 				<span>Contact: </span>{{resultdata.phone}}
 			</P>
-			<p>
+			<p ng-hide="resultdata.fax == 'null'";>
 				<span>Fax: </span>{{resultdata.fax}}
 			</P>
-			<p>
+			<p ng-hide="resultdata.email == 'null'";>
 				<span>Email: </span>{{resultdata.email}}
-			</p>
-			<p>
-				<span>Website: </span>{{resultdata.url}}
 			</p>
 		</div>
 	</div>
 </div>
 
-<div class="row">
+<div class="row" style="display: none">
 	<ul class="pager">
 		<li>
 			<a href="#">Previous</a>
