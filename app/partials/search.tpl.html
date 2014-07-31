@@ -13,47 +13,124 @@
 		<div class="row form-group">
 			<div class="col-sm-7 col-sm-offset-3">
 				<input type="text"  data-ng-model="term" class="input-block-level form-control txtSearch" placeholder="Search for Public Information Officer">
-				<button class="btn-search" data-ng-click="search()">
+				<button class="btn-search" data-ng-click="search()" ng-hide="goAdvanced">
 					<i class="fa fa-search fa-fs"></i>
 				</button>
 
-				<!-- <a id="advanced_search" ng-click="goAdvanced = !goAdvanced" class="">Advanced Search</a> -->
+				<a id="advanced_search" ng-click="goAdvanced = !goAdvanced" class="">Advanced Search</a>
 			</div>
 
-			<!-- <div class="col-sm-7 col-sm-offset-3" id="adv_form"  ng-show="goAdvanced">
-			<form class="form-horizontal" >
-			<label class="control-label" for="name">Name</label>
-			<input id="name" name="name" class="form-control"  type="text">
+			<div class="col-sm-7 col-sm-offset-3" id="adv_form"  ng-show="goAdvanced">
+				<form class="form-horizontal" >
+					<!-- <label class="control-label" for="name">Name</label>
+					<input id="name" name="name" class="form-control"  type="text"> -->
 
-			<label class="control-label" for="designation">Designation</label>
-			<select id="designation" name="designation" class="form-control" >
-			<option>Option one</option>
-			<option>Option two</option>
-			</select>
+					<!-- <label class="control-label" for="designation">Designation</label>
+					<select id="designation" name="designation" class="form-control" >
+					<option>Option one</option>
+					<option>Option two</option>
+					</select> -->
 
-			<label class="control-label" for="department">Department</label>
-			<select id="department" name="department" class="form-control" >
-			<option>Option one</option>
-			<option>Option two</option>
-			</select>
+					<label class="control-label" for="department">Department</label>
+					<select id="department" data-ng-model="dept" name="department" class="form-control" >
+						<option>Indian Missions</option>
+						<option>India Post</option>
+						<option>Ministry of Youth Affairs & Sports</option>
+						<option>Ministry of Agro & Rural Industries</option>
+						<option>Department of Atomic Energy</option>
+						<option>Ministry of Civil Aviation</option>
+						<option>Ministry of Coal</option>
+						<option>Ministry of Culture</option>
+						<option>Ministry of Development of North Eastern Region</option>
+						<option>Comptroller & Auditor General</option>
+						<option>Department of space</option>
+						<option>Ministry of Urban Development</option>
+						<option>Vice-President</option>
+						<option>Ministry of Water Resources</option>
+						<option>Ministry of Women & Child Development</option>
+						<option>Ministry of Railways</option>
+						<option>Ministry of shipping</option>
+						<option>Ministry of Drinking Water and Sanitation</option>
+						<option>Election Commission of India</option>
+						<option>Ministry of External Affairs</option>
+						<option>Ministry of Food Processing Industries</option>
+						<option>Ministry of Road Transport & Highways</option>
+						<option>Ministry of Information & Broadcasting</option>
+						<option>Ministry of Labour & Employment</option>
+						<option>Ministry of Earth Sciences</option>
+						<option>Ministry of Environment & Forests</option>
+						<option>Ministry of Housing & Urban Poverty Alleviation</option>
+						<option>Ministry of Micro, Small and Medium Enterprises</option>
+						<option>Ministry of Mines</option>
+						<option>Ministry of Panchayati Raj</option>
+						<option>Ministry of Minority Affairs</option>
+						<option>Ministry of New & Renewable Energy</option>
+						<option>Ministry of Overseas Indian Affairs</option>
+						<option>Ministry of Parliamentary Affairs</option>
+						<option>Ministry of Petroleum & Natural Gas</option>
+						<option>Planning Commission</option>
+						<option>Ministry of Power</option>
+						<option>President</option>
+						<option>Ministry of Social Justice & Empowerment</option>
+						<option>Ministry of Small Scale Industries</option>
+						<option>Ministry of Statistics & Programme Implementation</option>
+						<option>Ministry of Steel</option>
+						<option>Ministry of Textiles</option>
+						<option>Ministry of Tourism</option>
+						<option>Ministry of Tribal Affairs</option>
+					</select>
 
-			<label class="control-label" for="area">Area</label>
-			<select id="area" name="area" class="form-control" >
-			<option>Option one</option>
-			<option>Option two</option>
-			</select>
+					<!-- <label class="control-label" for="area">Area</label>
+					<select id="area" name="area" class="form-control" >
+					<option>Option one</option>
+					<option>Option two</option>
+					</select> -->
 
-			<label class="control-label" for="state">State</label>
-			<select id="state" name="state" class="form-control" >
-			<option>Option one</option>
-			<option>Option two</option>
-			</select>
-			<button id="avd_sub" class="btn-browse" type="submit">
-			Search
-			</button>
-			</form>
+					<label class="control-label" for="state">State</label>
+					<select id="state" data-ng-model="state" name="state" class="form-control" >
+						<option>Andaman and Nicobar Islands</option>
+						<option>Andhra Pradesh</option>
+						<option>Arunachal Pradesh</option>
+						<option>Assam</option>
+						<option>Bihar</option>
+						<option>Chandigarh</option>
+						<option>Chhattisgarh</option>
+						<option>Dadra and Nagar Haveli</option>
+						<option>Daman and Diu</option>
+						<option>Delhi</option>
+						<option>Goa</option>
+						<option>Gujarat</option>
+						<option>Haryana</option>
+						<option>Himachal Pradesh</option>
+						<option>Jammu and Kashmir</option>
+						<option>Jharkhand</option>
+						<option>Karnataka</option>
+						<option>Kerala</option>
+						<option>Lakshadweep Islands</option>
+						<option>Madhya Pradesh</option>
+						<option>Maharashtra</option>
+						<option>Manipur</option>
+						<option>Meghalaya</option>
+						<option>Mizoram</option>
+						<option>Nagaland</option>
+						<option>Odisha</option>
+						<option>Puducherry</option>
+						<option>Punjab</option>
+						<option>Rajasthan</option>
+						<option>Sikkim</option>
+						<option>Tamil Nadu</option>
+						<option>Telangana</option>
+						<option>Tripura</option>
+						<option>Uttar Pradesh</option>
+						<option>Uttarakhand</option>
+						<option>West Bengal</option>
+					</select>
+					<button id="avd_sub" class="btn-browse" type="submit" data-ng-click="search()">
+						Search
+					</button>
+				</form>
 
-			</div> -->
+			</div>
 
 		</div>
 
@@ -68,11 +145,11 @@
 	<div class="col-sm-8 col-sm-offset-2 " ng-show="results.data.length>0">
 		<h5>{{results.data.length}} results found</h5>
 	</div>
-	
+
 	<div class="col-sm-8 col-sm-offset-2 " ng-show="results.data.length==0">
 		<h4>No Results Found</h4>
 	</div>
-	
+
 	<div class="col-sm-8 col-sm-offset-2 panel search_panel" data-ng-repeat="resultdata in results.data">
 
 		<div class="col-sm-8">
