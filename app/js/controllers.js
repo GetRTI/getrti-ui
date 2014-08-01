@@ -132,7 +132,7 @@ angular.module('myApp.controllers', []).
 
 	//Deletes the multiple files
 	$scope.
-	delete      =
+	delete       =
 	function() {
 		var filesToDelete = Object.keys($scope.allfiles.selected);
 		FileService.
@@ -174,12 +174,27 @@ angular.module('myApp.controllers', []).
 	$scope.loader = "hide";
 	$scope.showresults = "false";
 	$scope.search = function() {
-		var term = $scope.term.split(' ').join('+');
-		var dept = $scope.dept.split(' ').join('+');
-		var state = $scope.state.split(' ').join('+');
+		var dept, term, state;
+		if ($scope.term) {
+			term = $scope.term.split(' ').join('+');
+		}
+		else
+		term="";
+
+		if ($scope.dept) {
+			dept = $scope.dept.split(' ').join('+');
+		}
+		else
+		dept="";
+
+		if ($scope.state) {
+			state = $scope.state.split(' ').join('+');
+		}
+		else
+		state="";
 
 		var res = term.concat(state, dept);
-		// term = $scope.term.split(' ').join('+');
+		
 		console.log(res);
 		$scope.loader = "show";
 		$http.get('http://api.getrti.org/search/' + res).then(function(response) {
@@ -194,4 +209,4 @@ angular.module('myApp.controllers', []).
 
 	};
 
-});
+}); 
